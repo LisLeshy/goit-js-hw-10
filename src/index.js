@@ -14,7 +14,7 @@ refs.searchBox.addEventListener(
 function onInputCountry() {
   const countryName = refs.searchBox.value;
   console.log(countryName);
-  if (countryName === '') {
+  if (countryName === '' || countryName === ' ') {
     refs.countryInfo.innerHTML = '';
     refs.countryList.innerHTML = '';
     return;
