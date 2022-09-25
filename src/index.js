@@ -13,8 +13,9 @@ refs.searchBox.addEventListener(
 
 function onInputCountry() {
   const countryName = refs.searchBox.value;
-  console.log(countryName);
-  if (countryName === '' || countryName === ' ') {
+  // console.log(countryName);
+  // console.log(countryName.trim());
+  if (countryName.trim() === '') {
     refs.countryInfo.innerHTML = '';
     refs.countryList.innerHTML = '';
     return;
@@ -22,7 +23,7 @@ function onInputCountry() {
 
   fetchCountries(countryName)
     .then(countrys => {
-      console.log(countrys);
+      // console.log(countrys);
       if (countrys.length > 10) {
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
